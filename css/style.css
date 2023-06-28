@@ -1,0 +1,106 @@
+/* All of this adapted from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_website_link_tree3 */
+body {
+  background-image: url("../figures/bg.png"); /* The image used for background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.name {
+  margin-top: 15px !important;
+}
+
+.w3-theme-d3 {
+  background-color: rgba(42, 169, 219, 0.6) !important;
+}
+
+.w3-theme-d3:hover {
+  background-color: rgba(42, 169, 219, 0.8) !important;
+}
+
+a {
+  font-size: x-large;
+}
+
+.w3-border {
+  border: 3px solid #ccc !important;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  jusify-content: center;
+  align-items: center;
+}
+
+.links-container a {
+  width: 80%;
+}
+
+.profession {
+  font-size: 14px;
+}
+
+.subscribe {
+  font-size: 15px;
+}
+
+.submit form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit form button {
+  margin-top: 5px;
+  background-color: rgba(27, 122, 159, 0.9) !important;
+  color: #fff !important;
+}
+
+.submit form button:hover {
+  background-color: rgba(15, 67, 87, 0.9) !important;
+  color: #fff !important;
+}
+.submit form input {
+  width: 100% !important;
+}
+.submit form input::placeholder {
+  color: #fff;
+}
+
+.icons {
+  display: flex;
+  gap: 40px;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.icons a svg {
+  fill: #d0ecf7;
+  transform: scale(1.5);
+}
+
+@media screen and (min-width: 768px) {
+  .link {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .profession {
+    font-size: 24px;
+  }
+}
