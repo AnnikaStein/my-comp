@@ -1,9 +1,9 @@
 /* All of this adapted from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_website_link_tree3 */
 body {
-  background-image: url("../figures/bg.png"); /* The image used for background */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url("../figures/bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .container {
@@ -28,6 +28,10 @@ body {
 }
 
 a {
+  font-size: large;
+}
+
+.flag {
   font-size: x-large;
 }
 
