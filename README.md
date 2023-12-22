@@ -8,3 +8,4 @@ Custom landing page for WCA Competitions, targeted at competitors looking for li
 - V-Cube Spiel A / B 2023
 - South Germany 2023
 - Kölner Kubing 2023
+- Cube Madness Schweinfurt 2023
