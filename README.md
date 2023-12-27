@@ -1,3 +1,5 @@
+[![pages-build-deployment](https://github.com/AnnikaStein/my-comp/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AnnikaStein/my-comp/actions/workflows/pages/pages-build-deployment)
+
 # my-comp
 Custom landing page for WCA Competitions, targeted at competitors looking for live results, schedule, more information.
 
