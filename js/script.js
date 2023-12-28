@@ -88,16 +88,57 @@ function locate() {
     german_closer.style.display = "block";
   }
 
+  function openManualLocModal() {
+    var selectionModal = document.getElementById("selectionModal");
+    selectionModal.style.display = "block";
+  }
+
   function error() {
     console.log("Unable to retrieve your location");
+    openManualLocModal();
   }
 
   if (!navigator.geolocation) {
     console.log("Geolocation is not supported by your browser");
+    openManualLocModal();
   } else {
     console.log("Waiting for GPS location ...");
     navigator.geolocation.getCurrentPosition(success, error);
   }
+}
+
+function manualCompSelector(ind) {
+  var selectionModal = document.getElementById("selectionModal");
+  selectionModal.style.display = "none";
+    if (ind == 1) {
+        console.log("Second comp was chosen");
+        var german_far = document.getElementById("main-de");
+        var english_far = document.getElementById("main-en");
+
+        var german_closer = document.getElementById("main-de-2");
+        var english_closer = document.getElementById("main-en-2");
+    }
+    else {
+        console.log("First comp was chosen");
+        var german_closer = document.getElementById("main-de");
+        var english_closer = document.getElementById("main-en");
+
+        var german_far = document.getElementById("main-de-2");
+        var english_far = document.getElementById("main-en-2");
+    }
+
+    let lang_divs_far = [german_far, english_far];
+    let lang_divs_closer = [german_closer, english_closer];
+
+    for (i=0; i < lang_divs_far.length; i++) {
+        lang_divs_far[i].style.display = "none";
+        lang_divs_far[i].classList.remove("navi");
+    }
+
+    for (i=0; i < lang_divs_closer.length; i++) {
+        lang_divs_closer[i].classList.add("navi");
+    }
+    german_closer.style.display = "block";
 }
 
 // comment out when there is only one comp the given weekend
