@@ -1,12 +1,21 @@
+// when there is only one comp the given weekend
+var duoCompWeekend = false;
+// switch to true if you want to locate the user or ask for manual selection
+
 function toggleLang() {
   var german = document.getElementById("main-de");
   var english = document.getElementById("main-en");
 
-  var german2 = document.getElementById("main-de-2");
-  var english2 = document.getElementById("main-en-2");
+  if (duoCompWeekend) {
+    var german2 = document.getElementById("main-de-2");
+    var english2 = document.getElementById("main-en-2");
 
-  if (german2.classList.contains("navi")) {
-    var lang_divs = [german2, english2];
+    if (german2.classList.contains("navi")) {
+      var lang_divs = [german2, english2];
+    }
+    else {
+      var lang_divs = [german, english];
+    }
   }
   else {
     var lang_divs = [german, english];
@@ -141,5 +150,6 @@ function manualCompSelector(ind) {
     german_closer.style.display = "block";
 }
 
-// comment out when there is only one comp the given weekend
-locate();
+if (duoCompWeekend) {
+  locate();
+}
