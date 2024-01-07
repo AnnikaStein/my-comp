@@ -6,15 +6,15 @@ Custom landing page for WCA Competitions, targeted at competitors looking for li
 Please contact your delegate, or the maintainer Annika Stein directly. (For delegates: please use slack, for organizers: available via whatsapp, best to use the respective competition group chat or DM).
 
 ## How does it work
-We need the following from you: the competition-ID, and the WCA Live number (currently, a four-digit-ID). These will be inserted into the respective links on the landing page.
+We need the following from you: the `competition-ID`, and the `WCA Live serial number` (currently, a four-digit-ID). These will be inserted into the respective links on the landing page.
 
 Therefore, if your comp is upcoming:
 
 1. Login to WCA live.
 2. Go to 'My competitions'.
-3. From 'Upcoming competitions' select the respective competition and import it. If there is nothing to import, the URL has been generated already (by you or your co-organizers / co-delegates).
+3. From 'Importable competitions' select the respective competition and import it. If there is nothing to import, the URL has been generated already (by you or your co-organizers / co-delegates).
 4. Note the number at the end of the newly generated URL, example '4151': https://live.worldcubeassociation.org/competitions/4151 .
-5. Get back to the maintainer (see above) with your competition-ID (e.g. "GermanOpen2024") and the WCA Live-ID (see 4.)
+5. Get back to the maintainer (see above) with your `competition-ID` (e.g. "GermanOpen2024") and the `WCA Live-ID` (see 4.)
 
 Your landing page will be updated such that you can use the laminated QR codes sent to you!
 
