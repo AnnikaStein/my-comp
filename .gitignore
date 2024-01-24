@@ -1,2 +1,5 @@
 # Don't need GIMP project files, exported versions are sufficient
 *.xcf
+
+# Mac stuff
+.DS_Store
