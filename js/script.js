@@ -1,6 +1,10 @@
 // when there is only one comp the given weekend
-var duoCompWeekend = false;
+//var duoCompWeekend = false;
 // switch to true if you want to locate the user or ask for manual selection
+var duoCompWeekend = true;
+
+// if multiple comps are happening for a given location (series comp)
+var timeDependent = true;
 
 function toggleLang() {
   var german = document.getElementById("main-de");
@@ -13,8 +17,15 @@ function toggleLang() {
     if (german2.classList.contains("navi")) {
       var lang_divs = [german2, english2];
     }
-    else {
+    if (german.classList.contains("navi")) {
       var lang_divs = [german, english];
+    }
+    if (timeDependent) {
+      var german3 = document.getElementById("main-de-3");
+      var english3 = document.getElementById("main-en-3");
+      if (german3.classList.contains("navi")) {
+        var lang_divs = [german3, english3];
+      }
     }
   }
   else {
@@ -31,6 +42,7 @@ function toggleLang() {
   }
 }
 
+
 // Merci https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function locate() {
 
@@ -41,9 +53,10 @@ function locate() {
     console.log(latitude);
     console.log(longitude);
 
-    var [lati1, long1] = [50.049303, 10.211571];
-    // this is just an arbitrary test, to be replaced of course whenever this becomes relevant
-    var [lati2, long2] = [-50.049303, -10.211571];
+    // Delmenhorst
+    var [lati1, long1] = [53.048325, 8.628512];
+    // Nürnberg (series comp)
+    var [lati2, long2] = [49.49267, 11.24286];
 
     // Taken from https://www.htmlgoodies.com/javascript/calculate-the-distance-between-two-points-in-your-web-apps/
     // (The Haversine function to calc distance on sphere, assuming km is the unit for output and inputs are in degree)
@@ -64,6 +77,7 @@ function locate() {
 
     let firstDist = distance(latitude, longitude, lati1, long1);
     let secondDist = distance(latitude, longitude, lati2, long2);
+    let thirdDist = secondDist;
 
     // if second comp is closer:
     if (secondDist < firstDist) {
@@ -71,8 +85,30 @@ function locate() {
       var german_far = document.getElementById("main-de");
       var english_far = document.getElementById("main-en");
 
-      var german_closer = document.getElementById("main-de-2");
-      var english_closer = document.getElementById("main-en-2");
+      if (timeDependent) {
+        // From https://stackoverflow.com/a/30776817/22745629
+        var d = new Date();
+        console.log(d.toUTCString());
+        // Monday = 1, Saturday = 6, Sunday = 0 - don't ask why
+        if(d.getUTCHours() >= 14 || d.getUTCDay() != 0 ) {
+          console.log("Take later comp (B)");
+          var german_closer = document.getElementById("main-de-3");
+          var english_closer = document.getElementById("main-en-3");
+          var german_far2 = document.getElementById("main-de-2");
+          var english_far2 = document.getElementById("main-en-2");
+        }
+        else {
+          console.log("Take earlier comp (A)");
+          var german_closer = document.getElementById("main-de-2");
+          var english_closer = document.getElementById("main-en-2");
+          var german_far2 = document.getElementById("main-de-3");
+          var english_far2 = document.getElementById("main-en-3");
+        }
+      }
+      else {
+        var german_closer = document.getElementById("main-de-2");
+        var english_closer = document.getElementById("main-en-2");
+      }
     }
     else {
       console.log("First comp is closer");
@@ -81,9 +117,18 @@ function locate() {
 
       var german_far = document.getElementById("main-de-2");
       var english_far = document.getElementById("main-en-2");
+      if (timeDependent) {
+        var german_far2 = document.getElementById("main-de-3");
+        var english_far2 = document.getElementById("main-en-3");
+      }
     }
-
-    let lang_divs_far = [german_far, english_far];
+    let lang_divs_far;
+    if (timeDependent) {
+      lang_divs_far = [german_far, english_far, german_far2, english_far2];
+    }
+    else {
+      lang_divs_far = [german_far, english_far];
+    }
     let lang_divs_closer = [german_closer, english_closer];
 
     for (i=0; i < lang_divs_far.length; i++) {
@@ -97,10 +142,7 @@ function locate() {
     german_closer.style.display = "block";
   }
 
-  function openManualLocModal() {
-    var selectionModal = document.getElementById("selectionModal");
-    selectionModal.style.display = "block";
-  }
+
 
   function error() {
     console.log("Unable to retrieve your location");
@@ -115,28 +157,48 @@ function locate() {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 }
-
+function openManualLocModal() {
+  var selectionModal = document.getElementById("selectionModal");
+  selectionModal.style.display = "block";
+}
 function manualCompSelector(ind) {
   var selectionModal = document.getElementById("selectionModal");
   selectionModal.style.display = "none";
-    if (ind == 1) {
-        console.log("Second comp was chosen");
-        var german_far = document.getElementById("main-de");
-        var english_far = document.getElementById("main-en");
+    // TIL how to use switch case in vanilla JS https://stackoverflow.com/a/6514571/22745629
+    switch (ind) {
+        case "0":
+            console.log("First comp was chosen");
+            var german_closer = document.getElementById("main-de");
+            var english_closer = document.getElementById("main-en");
 
-        var german_closer = document.getElementById("main-de-2");
-        var english_closer = document.getElementById("main-en-2");
+            var german_far = document.getElementById("main-de-2");
+            var english_far = document.getElementById("main-en-2");
+            var german_far2 = document.getElementById("main-de-3");
+            var english_far2 = document.getElementById("main-en-3");
+            break;
+        case "1":
+            console.log("Second comp was chosen");
+            var german_closer = document.getElementById("main-de-2");
+            var english_closer = document.getElementById("main-en-2");
+
+            var german_far = document.getElementById("main-de");
+            var english_far = document.getElementById("main-en");
+            var german_far2 = document.getElementById("main-de-3");
+            var english_far2 = document.getElementById("main-en-3");
+            break;
+        case "2":
+            console.log("Third comp was chosen");
+            var german_closer = document.getElementById("main-de-3");
+            var english_closer = document.getElementById("main-en-3");
+
+            var german_far = document.getElementById("main-de");
+            var english_far = document.getElementById("main-en");
+            var german_far2 = document.getElementById("main-de-2");
+            var english_far2 = document.getElementById("main-en-2");
+            break;
     }
-    else {
-        console.log("First comp was chosen");
-        var german_closer = document.getElementById("main-de");
-        var english_closer = document.getElementById("main-en");
 
-        var german_far = document.getElementById("main-de-2");
-        var english_far = document.getElementById("main-en-2");
-    }
-
-    let lang_divs_far = [german_far, english_far];
+    let lang_divs_far = [german_far, english_far, german_far2, english_far2];
     let lang_divs_closer = [german_closer, english_closer];
 
     for (i=0; i < lang_divs_far.length; i++) {
@@ -150,6 +212,11 @@ function manualCompSelector(ind) {
     german_closer.style.display = "block";
 }
 
+
 if (duoCompWeekend) {
   locate();
 }
+
+// if (timeDependent) {
+//     applyTiming();
+// }

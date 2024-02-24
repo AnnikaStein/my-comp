@@ -43,6 +43,10 @@ a {
   font-size: x-large;
 }
 
+.globe {
+  font-size: x-large;
+}
+
 .w3-border {
   border: 3px solid #ccc !important;
 }
