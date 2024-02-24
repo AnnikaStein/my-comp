@@ -23,6 +23,9 @@ If there are two competitions happening on the same weekend, so basically in the
 
 Therefore, nothing special to do from your side, the maintainer keeps an eye on the German Cube Association calendar and toggles the single-dual-competition switch. Just repeat steps 1.-5. for any upcoming competition you are in charge of!
 
+### Series comps
+In this case, time-dependent competition switches are implemented utilizing the current UTC date and time. In the manual selection, series comps are treated like different locations, e.g. as individual entries to select from.
+
 ## If you want to use the tool for other, non-GCA-related competitions (e.g. different RO)
 Of course, the links currently do not point to anything outside GCA-related domains. Second, the QR-code is tightly linked to the present original repo and website / URL.
 
