@@ -90,7 +90,7 @@ function locate() {
         var d = new Date();
         console.log(d.toUTCString());
         // Monday = 1, Saturday = 6, Sunday = 0 - don't ask why
-        if(d.getUTCHours() >= 14 || d.getUTCDay() != 0 ) {
+        if(d.getUTCHours() >= 14 || d.getUTCDay() == 0 ) {
           console.log("Take later comp (B)");
           var german_closer = document.getElementById("main-de-3");
           var english_closer = document.getElementById("main-en-3");
