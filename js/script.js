@@ -1,12 +1,12 @@
 // when there is only one comp the given weekend
-var duoCompWeekend = false;
+//var duoCompWeekend = false;
 // switch to true if you want to locate the user or ask for manual selection
-//var duoCompWeekend = true;
+var duoCompWeekend = true;
 
-// if multiple comps are happening for a given location (series comp)
-//var timeDependent = true;
 // usually, trivial case with only one comp per weekend
-var timeDependent = false;
+//var timeDependent = false;
+// if multiple comps are happening for a given location (series comp)
+var timeDependent = true;
 
 function toggleLang() {
   var german = document.getElementById("main-de");
@@ -56,7 +56,9 @@ function locate() {
     console.log(longitude);
 
     // Delmenhorst
-    var [lati1, long1] = [53.048325, 8.628512];
+    //var [lati1, long1] = [53.048325, 8.628512];
+    // Gütersloh
+    var [lati1, long1] = [51.884364, 8.366529];
     // Nürnberg (series comp)
     var [lati2, long2] = [49.49267, 11.24286];
 
@@ -218,7 +220,3 @@ function manualCompSelector(ind) {
 if (duoCompWeekend) {
   locate();
 }
-
-// if (timeDependent) {
-//     applyTiming();
-// }
