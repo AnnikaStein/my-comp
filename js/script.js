@@ -29,12 +29,11 @@ function toggleLang() {
         var lang_divs = [german3, english3];
       }
     }
-  }
-  else {
+  } else {
     var lang_divs = [german, english];
   }
 
-  for (i=0; i < lang_divs.length; i++) {
+  for (i = 0; i < lang_divs.length; i++) {
     if (lang_divs[i].classList.contains("hidden")) {
       lang_divs[i].style.display = "block";
     } else {
@@ -44,10 +43,8 @@ function toggleLang() {
   }
 }
 
-
 // Merci https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 function locate() {
-
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -65,18 +62,20 @@ function locate() {
     // Taken from https://www.htmlgoodies.com/javascript/calculate-the-distance-between-two-points-in-your-web-apps/
     // (The Haversine function to calc distance on sphere, assuming km is the unit for output and inputs are in degree)
     function distance(lat1, lon1, lat2, lon2) {
-        var radlat1 = Math.PI * lat1/180;
-        var radlat2 = Math.PI * lat2/180;
-        var radlon1 = Math.PI * lon1/180;
-        var radlon2 = Math.PI * lon2/180;
-        var theta = lon1 - lon2;
-        var radtheta = Math.PI * theta/180;
-        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-        dist = Math.acos(dist);
-        dist = dist * 180/Math.PI;
-        dist = dist * 60 * 1.1515;
-        dist = dist * 1.609344;
-        return dist
+      var radlat1 = (Math.PI * lat1) / 180;
+      var radlat2 = (Math.PI * lat2) / 180;
+      var radlon1 = (Math.PI * lon1) / 180;
+      var radlon2 = (Math.PI * lon2) / 180;
+      var theta = lon1 - lon2;
+      var radtheta = (Math.PI * theta) / 180;
+      var dist =
+        Math.sin(radlat1) * Math.sin(radlat2) +
+        Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+      dist = Math.acos(dist);
+      dist = (dist * 180) / Math.PI;
+      dist = dist * 60 * 1.1515;
+      dist = dist * 1.609344;
+      return dist;
     }
 
     let firstDist = distance(latitude, longitude, lati1, long1);
@@ -94,27 +93,24 @@ function locate() {
         var d = new Date();
         console.log(d.toUTCString());
         // Monday = 1, Saturday = 6, Sunday = 0 - don't ask why
-        if(d.getUTCHours() >= 14 || d.getUTCDay() == 0 ) {
+        if (d.getUTCHours() >= 14 || d.getUTCDay() == 0) {
           console.log("Take later comp (B)");
           var german_closer = document.getElementById("main-de-3");
           var english_closer = document.getElementById("main-en-3");
           var german_far2 = document.getElementById("main-de-2");
           var english_far2 = document.getElementById("main-en-2");
-        }
-        else {
+        } else {
           console.log("Take earlier comp (A)");
           var german_closer = document.getElementById("main-de-2");
           var english_closer = document.getElementById("main-en-2");
           var german_far2 = document.getElementById("main-de-3");
           var english_far2 = document.getElementById("main-en-3");
         }
-      }
-      else {
+      } else {
         var german_closer = document.getElementById("main-de-2");
         var english_closer = document.getElementById("main-en-2");
       }
-    }
-    else {
+    } else {
       console.log("First comp is closer");
       var german_closer = document.getElementById("main-de");
       var english_closer = document.getElementById("main-en");
@@ -129,24 +125,21 @@ function locate() {
     let lang_divs_far;
     if (timeDependent) {
       lang_divs_far = [german_far, english_far, german_far2, english_far2];
-    }
-    else {
+    } else {
       lang_divs_far = [german_far, english_far];
     }
     let lang_divs_closer = [german_closer, english_closer];
 
-    for (i=0; i < lang_divs_far.length; i++) {
+    for (i = 0; i < lang_divs_far.length; i++) {
       lang_divs_far[i].style.display = "none";
       lang_divs_far[i].classList.remove("navi");
     }
 
-    for (i=0; i < lang_divs_closer.length; i++) {
+    for (i = 0; i < lang_divs_closer.length; i++) {
       lang_divs_closer[i].classList.add("navi");
     }
     german_closer.style.display = "block";
   }
-
-
 
   function error() {
     console.log("Unable to retrieve your location");
@@ -161,61 +154,60 @@ function locate() {
     navigator.geolocation.getCurrentPosition(success, error);
   }
 }
-function openManualLocModal() {
+function openManualLocModal() {
   var selectionModal = document.getElementById("selectionModal");
   selectionModal.style.display = "block";
 }
 function manualCompSelector(ind) {
   var selectionModal = document.getElementById("selectionModal");
   selectionModal.style.display = "none";
-    // TIL how to use switch case in vanilla JS https://stackoverflow.com/a/6514571/22745629
-    switch (ind) {
-        case "0":
-            console.log("First comp was chosen");
-            var german_closer = document.getElementById("main-de");
-            var english_closer = document.getElementById("main-en");
+  // TIL how to use switch case in vanilla JS https://stackoverflow.com/a/6514571/22745629
+  switch (ind) {
+    case "0":
+      console.log("First comp was chosen");
+      var german_closer = document.getElementById("main-de");
+      var english_closer = document.getElementById("main-en");
 
-            var german_far = document.getElementById("main-de-2");
-            var english_far = document.getElementById("main-en-2");
-            var german_far2 = document.getElementById("main-de-3");
-            var english_far2 = document.getElementById("main-en-3");
-            break;
-        case "1":
-            console.log("Second comp was chosen");
-            var german_closer = document.getElementById("main-de-2");
-            var english_closer = document.getElementById("main-en-2");
+      var german_far = document.getElementById("main-de-2");
+      var english_far = document.getElementById("main-en-2");
+      var german_far2 = document.getElementById("main-de-3");
+      var english_far2 = document.getElementById("main-en-3");
+      break;
+    case "1":
+      console.log("Second comp was chosen");
+      var german_closer = document.getElementById("main-de-2");
+      var english_closer = document.getElementById("main-en-2");
 
-            var german_far = document.getElementById("main-de");
-            var english_far = document.getElementById("main-en");
-            var german_far2 = document.getElementById("main-de-3");
-            var english_far2 = document.getElementById("main-en-3");
-            break;
-        case "2":
-            console.log("Third comp was chosen");
-            var german_closer = document.getElementById("main-de-3");
-            var english_closer = document.getElementById("main-en-3");
+      var german_far = document.getElementById("main-de");
+      var english_far = document.getElementById("main-en");
+      var german_far2 = document.getElementById("main-de-3");
+      var english_far2 = document.getElementById("main-en-3");
+      break;
+    case "2":
+      console.log("Third comp was chosen");
+      var german_closer = document.getElementById("main-de-3");
+      var english_closer = document.getElementById("main-en-3");
 
-            var german_far = document.getElementById("main-de");
-            var english_far = document.getElementById("main-en");
-            var german_far2 = document.getElementById("main-de-2");
-            var english_far2 = document.getElementById("main-en-2");
-            break;
-    }
+      var german_far = document.getElementById("main-de");
+      var english_far = document.getElementById("main-en");
+      var german_far2 = document.getElementById("main-de-2");
+      var english_far2 = document.getElementById("main-en-2");
+      break;
+  }
 
-    let lang_divs_far = [german_far, english_far, german_far2, english_far2];
-    let lang_divs_closer = [german_closer, english_closer];
+  let lang_divs_far = [german_far, english_far, german_far2, english_far2];
+  let lang_divs_closer = [german_closer, english_closer];
 
-    for (i=0; i < lang_divs_far.length; i++) {
-        lang_divs_far[i].style.display = "none";
-        lang_divs_far[i].classList.remove("navi");
-    }
+  for (i = 0; i < lang_divs_far.length; i++) {
+    lang_divs_far[i].style.display = "none";
+    lang_divs_far[i].classList.remove("navi");
+  }
 
-    for (i=0; i < lang_divs_closer.length; i++) {
-        lang_divs_closer[i].classList.add("navi");
-    }
-    german_closer.style.display = "block";
+  for (i = 0; i < lang_divs_closer.length; i++) {
+    lang_divs_closer[i].classList.add("navi");
+  }
+  german_closer.style.display = "block";
 }
-
 
 if (duoCompWeekend) {
   locate();
