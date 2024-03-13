@@ -9,7 +9,7 @@ on:
   #  - cron: '30 18 *  * TUE'
 
 jobs:
-  get-comps:
+  get-comps-write-to-ui:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.7'
 
-      - name: execute python script
+      - name: execute python scripts
         run: |
           cd python
           python get_comps.py
@@ -36,4 +36,4 @@ jobs:
         uses: creyD/prettier_action@v4.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          prettier_options: --write **/*.{js,md}
+          prettier_options: --write **/*.{js,html,css,md}
