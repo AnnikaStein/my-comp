@@ -18,10 +18,16 @@ jobs:
         with:
           python-version: '3.7'
 
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade --no-cache-dir pip
+          pip install -r requirements.txt
+
       - name: execute python scripts
         run: |
           cd python
-          python get_comps.py
+          python get_comps.py 
+      # python write_comps_to_ui.py
 
   prettier:
     runs-on: ubuntu-latest

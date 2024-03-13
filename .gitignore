@@ -3,3 +3,17 @@
 
 # Mac stuff
 .DS_Store
+
+# Don't clutter with this stuff
+*/.ipynb_checkpoints/*
+.ipynb_checkpoints/*
+
+# Prototyping results are irrelevant for public version
+notebooks/*.html
+
+# This is unrelated, exists only for convenience
+tab*
+
+# Used this repo also for (kind of unrelated) GCA stuff
+figures
+python/*newcomer*
