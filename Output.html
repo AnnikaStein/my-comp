@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Comp</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link href="https://www.w3schools.com/lib/w3-theme-light-blue.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Content container -->
+    <div class="container navi" id="main-de-0">
+      <div class="icons w3-padding">
+        <a class="w3-button w3-round link flag" onclick="toggleLang()">🇬🇧</a>
+        <a class="w3-button w3-round link globe" onclick="openManualLocModal()">🌐</a>
+      </div>
+      <!-- Name container -->
+      <div class="" style="text-align: center">
+        <p class="name">
+          <span class="w3-padding w3-theme-l1 w3-round" style="font-weight: bolder; font-size: large;">Willkommen!</span>
+        </p>
+        <p>
+          <span class="w3-padding w3-theme-d5 w3-round" style="font-weight: bolder;">Rahn Education Open 2024</span>
+        </p><br>
+      </div>
+      <!-- Links section -->
+      <div class="links-container">
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://live.worldcubeassociation.org/link/competitions/RahnEducationOpen2024" target="_blank"><i class="fa-solid fa-ranking-star"></i> WCA Live</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.competitiongroups.com/competitions/RahnEducationOpen2024" target="_blank"><i class="fa-solid fa-users"></i> Einteilungen</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RahnEducationOpen2024#competition-schedule" target="_blank"><i class="fa-regular fa-clock"></i> Zeitplan</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RahnEducationOpen2024#general-info" target="_blank"><i class="fa-solid fa-circle-info"></i> Alle Infos</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/anleitungen/#competitor-tutorial" target="_blank"><i class="fa-regular fa-lightbulb"></i> Teilnehmer Crash-Kurs</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/anleitungen/#judging-tutorial" target="_blank"><i class="fa-solid fa-scale-balanced"></i> Judging Crash-Kurs</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/verein/" target="_blank"><i class="fa-solid fa-crown"></i> Werde GCA Mitglied</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions?region=Germany&amp;search=&amp;state=present&amp;year=all+years&amp;from_date=&amp;to_date=&amp;delegate=&amp;show_registration_status=on&amp;display=list" target="_blank" title="Grünes Symbol in der Liste zeigt, dass die Anmeldung geöffnet ist und noch Plätze da sind."><i class="fa-solid fa-thumbs-up"></i> Mehr Comps!</a><br>
+        <!-- Icons section -->
+        <div class="icons w3-padding">
+          <a href="https://www.instagram.com/germancubeassociation/" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://discord.gg/vUaxGnYGP2" target="_blank"><i aria-hidden="true" class="fa-brands fa-discord" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://www.germancubeassociation.de/kontakt/" target="_blank"><i aria-hidden="true" class="fa-solid fa-envelope" style="color: #c7dfee; font-size: xx-large;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container navi hidden" id="main-en-0" style="display:none;">
+      <div class="icons w3-padding">
+        <a class="w3-button w3-round link flag" onclick="toggleLang()">🇩🇪</a>
+        <a class="w3-button w3-round link globe" onclick="openManualLocModal()">🌐</a>
+      </div>
+      <!-- Name container -->
+      <div class="" style="text-align: center">
+        <p class="name">
+          <span class="w3-padding w3-theme-l1 w3-round" style="font-weight: bolder; font-size: large;">Welcome!</span>
+        </p>
+        <p>
+          <span class="w3-padding w3-theme-d5 w3-round" style="font-weight: bolder;">Rahn Education Open 2024</span>
+        </p><br>
+      </div>
+      <!-- Links section -->
+      <div class="links-container">
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://live.worldcubeassociation.org/link/competitions/RahnEducationOpen2024" target="_blank"><i class="fa-solid fa-ranking-star"></i> WCA Live</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.competitiongroups.com/competitions/RahnEducationOpen2024" target="_blank"><i class="fa-solid fa-users"></i> Assignments</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RahnEducationOpen2024#competition-schedule" target="_blank"><i class="fa-regular fa-clock"></i> Schedule</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RahnEducationOpen2024#general-info" target="_blank"><i class="fa-solid fa-circle-info"></i> All info</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://documents.worldcubeassociation.org/edudoc/competitor-tutorial/tutorial.pdf" target="_blank"><i class="fa-regular fa-lightbulb"></i> Competitor tutorial</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://documents.worldcubeassociation.org/edudoc/judge-tutorial/judge-tutorial.pdf" target="_blank"><i class="fa-solid fa-scale-balanced"></i> Judging tutorial</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/verein/" target="_blank"><i class="fa-solid fa-crown"></i> Become GCA member</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions?region=Germany&amp;search=&amp;state=present&amp;year=all+years&amp;from_date=&amp;to_date=&amp;delegate=&amp;show_registration_status=on&amp;display=list" target="_blank" title="Green symbol in list signalizes registration is open and not yet full."><i class="fa-solid fa-thumbs-up"></i> More comps!</a><br>
+        <!-- Icons section -->
+        <div class="icons w3-padding">
+          <a href="https://www.instagram.com/germancubeassociation/" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://discord.gg/vUaxGnYGP2" target="_blank"><i aria-hidden="true" class="fa-brands fa-discord" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://www.germancubeassociation.de/kontakt/" target="_blank"><i aria-hidden="true" class="fa-solid fa-envelope" style="color: #c7dfee; font-size: xx-large;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="main-de-1" style="display:none;">
+      <div class="icons w3-padding">
+        <a class="w3-button w3-round link flag" onclick="toggleLang()">🇬🇧</a>
+        <a class="w3-button w3-round link globe" onclick="openManualLocModal()">🌐</a>
+      </div>
+      <!-- Name container -->
+      <div class="" style="text-align: center">
+        <p class="name">
+          <span class="w3-padding w3-theme-l1 w3-round" style="font-weight: bolder; font-size: large;">Willkommen!</span>
+        </p>
+        <p>
+          <span class="w3-padding w3-theme-d5 w3-round" style="font-weight: bolder;">Rhein-Neckar Beginners 2024</span>
+        </p><br>
+      </div>
+      <!-- Links section -->
+      <div class="links-container">
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://live.worldcubeassociation.org/link/competitions/RheinNeckarBeginners2024" target="_blank"><i class="fa-solid fa-ranking-star"></i> WCA Live</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.competitiongroups.com/competitions/RheinNeckarBeginners2024" target="_blank"><i class="fa-solid fa-users"></i> Einteilungen</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RheinNeckarBeginners2024#competition-schedule" target="_blank"><i class="fa-regular fa-clock"></i> Zeitplan</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RheinNeckarBeginners2024#general-info" target="_blank"><i class="fa-solid fa-circle-info"></i> Alle Infos</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/anleitungen/#competitor-tutorial" target="_blank"><i class="fa-regular fa-lightbulb"></i> Teilnehmer Crash-Kurs</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/anleitungen/#judging-tutorial" target="_blank"><i class="fa-solid fa-scale-balanced"></i> Judging Crash-Kurs</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/verein/" target="_blank"><i class="fa-solid fa-crown"></i> Werde GCA Mitglied</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions?region=Germany&amp;search=&amp;state=present&amp;year=all+years&amp;from_date=&amp;to_date=&amp;delegate=&amp;show_registration_status=on&amp;display=list" target="_blank" title="Grünes Symbol in der Liste zeigt, dass die Anmeldung geöffnet ist und noch Plätze da sind."><i class="fa-solid fa-thumbs-up"></i> Mehr Comps!</a><br>
+        <!-- Icons section -->
+        <div class="icons w3-padding">
+          <a href="https://www.instagram.com/germancubeassociation/" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://discord.gg/vUaxGnYGP2" target="_blank"><i aria-hidden="true" class="fa-brands fa-discord" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://www.germancubeassociation.de/kontakt/" target="_blank"><i aria-hidden="true" class="fa-solid fa-envelope" style="color: #c7dfee; font-size: xx-large;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container hidden" id="main-en-1" style="display:none;">
+      <div class="icons w3-padding">
+        <a class="w3-button w3-round link flag" onclick="toggleLang()">🇩🇪</a>
+        <a class="w3-button w3-round link globe" onclick="openManualLocModal()">🌐</a>
+      </div>
+      <!-- Name container -->
+      <div class="" style="text-align: center">
+        <p class="name">
+          <span class="w3-padding w3-theme-l1 w3-round" style="font-weight: bolder; font-size: large;">Welcome!</span>
+        </p>
+        <p>
+          <span class="w3-padding w3-theme-d5 w3-round" style="font-weight: bolder;">Rhein-Neckar Beginners 2024</span>
+        </p><br>
+      </div>
+      <!-- Links section -->
+      <div class="links-container">
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://live.worldcubeassociation.org/link/competitions/RheinNeckarBeginners2024" target="_blank"><i class="fa-solid fa-ranking-star"></i> WCA Live</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.competitiongroups.com/competitions/RheinNeckarBeginners2024" target="_blank"><i class="fa-solid fa-users"></i> Assignments</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RheinNeckarBeginners2024#competition-schedule" target="_blank"><i class="fa-regular fa-clock"></i> Schedule</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions/RheinNeckarBeginners2024#general-info" target="_blank"><i class="fa-solid fa-circle-info"></i> All info</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://documents.worldcubeassociation.org/edudoc/competitor-tutorial/tutorial.pdf" target="_blank"><i class="fa-regular fa-lightbulb"></i> Competitor tutorial</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://documents.worldcubeassociation.org/edudoc/judge-tutorial/judge-tutorial.pdf" target="_blank"><i class="fa-solid fa-scale-balanced"></i> Judging tutorial</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.germancubeassociation.de/verein/" target="_blank"><i class="fa-solid fa-crown"></i> Become GCA member</a><br>
+        <a class="w3-button w3-round w3-theme-d3 w3-border link" href="https://www.worldcubeassociation.org/competitions?region=Germany&amp;search=&amp;state=present&amp;year=all+years&amp;from_date=&amp;to_date=&amp;delegate=&amp;show_registration_status=on&amp;display=list" target="_blank" title="Green symbol in list signalizes registration is open and not yet full."><i class="fa-solid fa-thumbs-up"></i> More comps!</a><br>
+        <!-- Icons section -->
+        <div class="icons w3-padding">
+          <a href="https://www.instagram.com/germancubeassociation/" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://discord.gg/vUaxGnYGP2" target="_blank"><i aria-hidden="true" class="fa-brands fa-discord" style="color: #c7dfee; font-size: xx-large;"></i></a>
+          <a href="https://www.germancubeassociation.de/kontakt/" target="_blank"><i aria-hidden="true" class="fa-solid fa-envelope" style="color: #c7dfee; font-size: xx-large;"></i></a>
+        </div>
+      </div>
+    </div>
+    <script src="js/script-Copy1.js"></script>
+    <script async="async" data-id="101446349" src="//static.getclicky.com/js"></script>
+  </body>
+</html>
