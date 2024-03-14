@@ -8,33 +8,48 @@ import urllib.request as libreq
 # tool to read in the response as json
 import json
 
+# want to know starting and end times, and want to perform some calls once a week to populate my landing page
+import datetime
+
 # unofficial api, example returns all competitions in a given country
 with libreq.urlopen('https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api/competitions/DE.json') as file:
     # the file is understood as json
     json_data = json.load(file)
 
-# want to know starting and end times, and want to perform some calls once a week to populate my landing page
-import datetime
+debug = False    
+
 # when the script runs
 now = datetime.datetime.now()
 # up until a week from now
-d = datetime.timedelta(days=7)
-oneweek_from_now = now + d
+d = datetime.timedelta(days=11)
+later = now + d
 
 # formatting into something close to js syntax for UTC time
 today = now.strftime("%Y-%m-%d")
-oneweek_from_today = oneweek_from_now.strftime("%Y-%m-%d")
-print(today)
-print(oneweek_from_today)
+later_day = later.strftime("%Y-%m-%d")
+print()
+print('#'*8)
+print()
+print('>> Looking for comps')
+print('      from', today)
+print('      until', later_day)
 
 # assume this script runs, say every Tuesday.
 # and this will hold the relevant information per compid
 upcoming_comp_info = []
 # nested json, get the actual items and loop over them
 for k in json_data['items']:
-    # only those within one week from now
-    if k['date']['from'] >= today and k['date']['from'] < oneweek_from_today:
-        print(k)
+    # only those within one week (or similar time delta) from now
+    if k['date']['from'] >= today and k['date']['from'] < later_day:
+        if debug:
+            print()
+            print('#'*8)
+            print()
+            print('>> Parsing public comp info:')
+            print(k)
+            print()
+            print('#'*8)
+            print()
         compid = k['id']
         # for every compid, there is the wcif with further info,
         # parse this as well (inside the loop for every comp that fulfils the criteria)
@@ -231,22 +246,46 @@ def generate_html(comp_info, multi = False):
         script(src='js/script-Copy1.js')
         script(data_id='101446349', _async=True, src='//static.getclicky.com/js')
 
-    print(doc.render())
+    if debug:
+        print()
+        print('#'*8)
+        print()
+        print('>> Writing HTML file:')
+        print(doc.render())
+        print()
+        print('#'*8)
+        print()
     with open("../Output.html", "w") as text_file:
         print(doc, file=text_file)
 
 
 # now we know the IDs of comps taking place the upcoming weekend, and relevant info to steer the UI
+print()
+print('#'*8)
+print()
+print('>> Found information for these upcoming comps:')
 print(upcoming_comp_info)
+print()
+print('#'*8)
+print()
 
 some_new = True
 if len(upcoming_comp_info) == 0:
-    print('No new upcoming comps, exiting.')
+    print('>> No new upcoming comps. Generating landing page with few standard links only.')
     some_new = False
 
 if some_new:
+    print('>> Adding upcoming competition info to UI.')
     multi_comp_weekend = False
     if len(upcoming_comp_info) > 1:
-        print('Multi-Comp Weekend!')
+        print('>> Multiple comps in timeframe!')
         multi_comp_weekend = True
-        generate_html(comp_info = upcoming_comp_info, multi = multi_comp_weekend)
+    generate_html(comp_info = upcoming_comp_info, multi = multi_comp_weekend)
+
+print()
+print('#'*8)
+print()
+print('>> Finished UI update. Have fun!')
+print()
+print('#'*8)
+print()
