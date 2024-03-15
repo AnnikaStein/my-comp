@@ -26,8 +26,7 @@ jobs:
       - name: execute python scripts
         run: |
           cd python
-          python get_comps.py 
-      # python write_comps_to_ui.py
+          python get_comps_write_to_ui.py
 
   prettier:
     runs-on: ubuntu-latest
