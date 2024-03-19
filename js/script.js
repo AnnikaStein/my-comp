@@ -1,12 +1,12 @@
 // when there is only one comp the given weekend
-//var duoCompWeekend = false;
+var duoCompWeekend = false;
 // switch to true if you want to locate the user or ask for manual selection
-var duoCompWeekend = true;
+//var duoCompWeekend = true;
 
 // usually, trivial case with only one comp per weekend
-//var timeDependent = false;
+var timeDependent = false;
 // if multiple comps are happening for a given location (series comp)
-var timeDependent = true;
+//var timeDependent = true;
 
 function toggleLang() {
   var german = document.getElementById("main-de");
