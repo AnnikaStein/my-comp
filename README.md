@@ -1,4 +1,4 @@
-[![pages-build-deployment](https://github.com/AnnikaStein/my-comp/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AnnikaStein/my-comp/actions/workflows/pages/pages-build-deployment)
+[![Deploy static content to Pages](https://github.com/AnnikaStein/my-comp/actions/workflows/static.yml/badge.svg)](https://github.com/AnnikaStein/my-comp/actions/workflows/static.yml)
 
 # my-comp
 
@@ -23,7 +23,7 @@ Your landing page will be updated such that you can use the laminated QR codes s
 
 If there are two competitions happening on the same weekend, so basically in the same time frame, the optional multi-comp feature will be made available to automatically locate users via GPS and select the corresponding competition (fallback solution: manual selection of the competition by the user).
 
-Therefore, nothing special to do from your side, the maintainer keeps an eye on the German Cube Association calendar and toggles the single-dual-competition switch. Just repeat steps 1.-5. for any upcoming competition you are in charge of!
+Therefore, nothing special to do from your side, the maintainer keeps an eye on the German Cube Association calendar and toggles the single-dual-competition switch. Just repeat steps 1.-4. for any upcoming competition you are in charge of!
 
 ### Series comps
 
