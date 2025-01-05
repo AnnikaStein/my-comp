@@ -54,12 +54,12 @@ a {
 .links-container {
   display: flex;
   flex-direction: column;
-  jusify-content: center;
+  justify-content: center;
   align-items: center;
 }
 
 .links-container a {
-  width: 80%;
+  width: 100%;
 }
 
 .profession {
